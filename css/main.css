@@ -685,6 +685,75 @@ main {
     flex-direction  : column;
     justify-content : space-between;
 }
+.quotations__items {
+  position: relative;
+  z-index: 1111;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  ;
+}
+
+.bg {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  bottom: 2px;
+  width: 425px;
+  height:200px;
+  z-index: 2;
+  background: rgba(255, 255, 255, .95);
+  backdrop-filter: blur(24px);
+  border-radius: 10px;
+  overflow: hidden;
+  outline: 2px solid white;
+}
+
+.blob {
+    position: absolute;
+    z-index: 1;
+    top: 0; 
+    left: 0; 
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color:#a30016;
+    opacity: 1; 
+     filter: blur(20px);
+    animation: blob-bounce 6s infinite ease-in-out; /* Tezlikni o'zgartirdik */
+}
+@keyframes blob-bounce {
+    /* Blob faqat musbat (positive) yo'nalishda harakat qilishi kerak, 
+       chunki u top: 0; left: 0; dan boshlanadi */
+       
+    0% {
+        /* Boshlang'ich nuqta: yuqori chap burchak */
+        transform: translate3d(0, 0, 0); 
+    }
+
+    25% {
+        /* Yuqori o'ng burchak (masalan, 80% o'ngga) */
+        transform: translate3d(80%, 0, 0); 
+    }
+
+    50% {
+        /* Pastki o'ng burchak (80% o'ngga, 80% pastga) */
+        transform: translate3d(80%, 80%, 0); 
+    }
+
+    75% {
+        /* Pastki chap burchak (0% o'ngga, 80% pastga) */
+        transform: translate3d(0, 80%, 0); 
+    }
+
+    100% {
+        /* Boshlang'ich nuqtaga qaytish */
+        transform: translate3d(0, 0, 0); 
+    }
+}
 
 .quotations__items h3 {
     font-style   : italic;
@@ -693,11 +762,14 @@ main {
     line-height  : 1.6;
     color        : var(--text-dark);
     margin-bottom: 30px;
+    position: relative;
+    z-index: 5;
 }
 
 .quotations__items h3 span {
     font-weight: 700;
     color      : var(--text-dark);
+
 }
 
 .quotations__items .quotations__box {
@@ -705,6 +777,8 @@ main {
     align-items: center;
     gap        : 15px;
     margin-top : auto;
+    position: relative;
+    z-index: 5;
 }
 
 .quotations__items .quotations__box img {
