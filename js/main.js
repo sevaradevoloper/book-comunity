@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", renderCarousel);
 
 
 // === Counterlar ===
-function animateCounter(id, target, speed = 50) {
+function animateCounter(id, target, speed = 500) {
   const el = document.getElementById(id);
   let count = 0;
   const step = Math.ceil(target / speed);
@@ -101,7 +101,7 @@ function animateCounter(id, target, speed = 50) {
       clearInterval(interval);
     }
     el.textContent = count;
-  }, 30);
+  }, 50);
 }
 
 window.addEventListener("load", () => {

@@ -141,7 +141,45 @@ body {
     background-color: transparent;
     color           : var(--color-white);
     border          : 1px solid var(--color-white);
+    position: relative;
 }
+
+
+.header__btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(170, 170, 170, 0.2);
+}
+
+.header__btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(167, 167, 167, 0.2);
+}
+
+.header__btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 1s;
+}
+
+.header__btn::after {
+  background: transparent;
+}
+
+.header__btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  background: var(--color-white);
+  opacity: 0;
+}
+
+
+
 
 .hamburger {
     display       : none;
@@ -245,6 +283,55 @@ main {
     gap           : 10px;
 }
 
+.hero__btn {
+    padding         : 10px 24px;
+    border-radius   : 20px;
+    font-weight     : 500;
+    font-style      : Medium;
+    font-size       : 16px;
+    line-height     : 200%;
+    letter-spacing  : 0%;
+    text-align      : center;
+    cursor          : pointer;
+    background-color: transparent;
+    color           : var(--color-white);
+    border          : 1px solid var(--color-white);
+    position: relative;
+}
+
+
+.hero__btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(170, 170, 170, 0.2);
+}
+
+.hero__btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(167, 167, 167, 0.2);
+}
+
+.hero__btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 1s;
+}
+
+.hero__btn::after {
+  background: transparent;
+}
+
+.hero__btn:hover::after {
+  transform: scaleX(1.2) scaleY(1.4);
+  background: var(--primary-color);
+  opacity: 0;
+}
 .hero__buttons .hero__btn:first-child {
     background-color: var(--primary-color);
     color           : white;
@@ -725,11 +812,14 @@ main {
 @media (max-width: 768px) {
     .counter__list {
         flex-direction: column; 
+        align-items: center;
+        justify-content: center;
         gap: 30px;
     }
 
     .counter__items {
         justify-content: center; 
+        align-items: center;
         padding: 10px 0;
         width: 100%;
     }
